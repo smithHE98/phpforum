@@ -1,0 +1,124 @@
+body {
+    background-color: #75c9b2;
+    text-align: center;
+}
+
+#content {
+    background-color: #fff;
+    border: 1px solid #000;
+    float: left;
+    font-family: Georgia, "Times New Roman", serif;
+    padding: 20px 30px;
+    text-align: left;
+    width: 100%;
+    height: 200px;
+}
+
+#menu {
+    float: left;
+    border: 1px solid #000;
+    border-bottom: none;
+    clear: both;
+    width: 100%;
+    height: 30px;
+    padding: 0 30px;
+    background-color: #FFF;
+    text-align: left;
+    font-size: 85%;
+}
+
+#menu a:hover {
+    background-color: #5d74c1;
+}
+
+#userbar {
+    background-color: #fff;
+    float: right;
+    width: 250px;
+}
+
+#footer {
+    position:absolute;
+    bottom:0;
+    width:100%;
+    height:60px;
+    clear: both;
+}
+
+#wrapper {
+    width: 900px;
+    margin: 0 auto;
+}
+
+/* Table styles */
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table a {
+    color: #000;
+}
+
+table a:hover {
+    color:#373737;
+    text-decoration: none;
+}
+
+th {
+    background-color: #B40E1F;
+    color: #F0F0F0;
+}
+
+td {
+    padding: 5px;
+}
+
+/* Font styles */
+h1, #footer {
+    font-family: Georgia, "Times New Roman", serif;
+    color: #000000;
+}
+
+h3 {margin: 0; padding: 0;}
+
+/* Menu styles */
+.item {
+    background-color: #35528b;
+    border: 1px solid #3c6772;
+    color: #FFF;
+    font-family: "Arial", sans-serif;
+    padding: 3px;
+    text-decoration: none;
+}
+
+.leftpart {
+    width: 70%;
+}
+
+.rightpart {
+    width: 30%;
+}
+
+.small {
+    font-size: 75%;
+    color: #373737;
+}
+#footer {
+    font-size: 65%;
+    padding: 3px 0 0 0;
+}
+
+.topic-post {
+    height: 100px;
+    overflow: auto;
+}
+
+.post-content {
+    padding: 30px;
+}
+
+textarea {
+    width: 500px;
+    height: 200px;
+}
