@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="/assets/style.css" type="text/css">
+
 <?php
 /**
  * Created by PhpStorm.
@@ -8,6 +10,12 @@
 
 include 'connect.php';
 include 'templates/header.php';
+
+?>
+
+<div id="content">
+
+    <?php
 
 echo '<h3>Sign in</h3>';
 
@@ -51,7 +59,7 @@ else
         }
         else
         {
-            $mysqli = "SELECT 
+            $sql = "SELECT 
                         user_id,
                         user_name,
                         user_level
@@ -62,7 +70,9 @@ else
                     AND
                         user_pass = '" . sha1($_POST['user_pass']) . "'";
 
-            $result = ($mysqli);
+            $sql = "INSERT INTO persons (first_name, last_name, email) VALUES ('$first_name', '$last_name', '$email')";
+
+            $result = ($sql);
             if(!$result)
             {
                 echo 'Something went wrong while signing in. Please try again later.';
@@ -91,8 +101,14 @@ else
     }
 }
 
+?>
+</div>
+
+
+<?php
+
 include 'templates/footer.php';
+
 ?>
 
 
-<link rel="stylesheet" href="/assets/style.css" type="text/css">

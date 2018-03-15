@@ -9,16 +9,18 @@
 include 'connect.php';
 include 'templates/header.php';
 
-echo '<tr>';
-echo '<td class="leftpart">';
+?>
 
-echo '</td>';
-echo '<td class="rightpart">';
+<div id="content">
 
-echo '</td>';
-echo '</tr>';
+
+</div>
+
+<?php
 include 'templates/footer.php';
 ?>
+
+
 
 <link rel="stylesheet" href="/assets/style.css" type="text/css">
 

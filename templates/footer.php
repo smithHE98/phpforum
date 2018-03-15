@@ -8,8 +8,8 @@
 
 ?>
 
-
+<div id="wrapper">
 <div id="footer">CREATED BY HANNAH SMITH</div>
-
+</div>
 
 <link rel="stylesheet" href="/assets/style.css" type="text/css">

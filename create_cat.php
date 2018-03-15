@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="/assets/style.css" type="text/css">
+
 <?php
 /**
  * Created by PhpStorm.
@@ -9,17 +11,51 @@
 include 'connect.php';
 include 'templates/header.php';
 
-echo '<tr>';
-echo '<td class="leftpart">';
-echo '<h3><a href="/category.php?id=">Category name</a></h3> Category description goes here';
-echo '</td>';
-
-echo '<td class="rightpart">';
-echo '<a href="/topic.php?id=">Topic subject</a> at 10-10';
-echo '</td>';
-echo '</tr>';
-
-include 'templates/footer.php';
 ?>
 
-<link rel="stylesheet" href="/assets/style.css" type="text/css">
+
+<div id="content">
+
+<?php
+
+if($_SERVER['REQUEST_METHOD'] != 'POST')
+{
+    echo '<form method="post" action="">
+        Category name: <input type="text" name="cat_name" />
+        Category description: <textarea name="cat_description" /></textarea>
+        <input type="submit" value="Add category" />
+     </form>';
+}
+else
+{
+    $sql = "INSERT INTO
+            categories
+        (cat_name, 
+        cat_description)
+       VALUES 
+       ('cat_name', 
+       'cat_description', 
+       'email')";
+
+    $result = mysqli_query($sql);
+    if(!$result)
+    {
+        echo "Error" . $mysqli_error();
+    }
+    else
+    {
+        echo "New category successfully added.";
+    }
+}
+?>
+
+</div>
+
+
+<?php
+
+include 'templates/footer.php';
+
+?>
+
+

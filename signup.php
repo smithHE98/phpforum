@@ -9,6 +9,12 @@
 include 'connect.php';
 include 'templates/header.php';
 
+?>
+
+<div id="content">
+
+    <?php
+
 echo '<h3>Sign up</h3>';
 
 if ($_SERVER['REQUEST_METHOD'] != 'POST') {
@@ -88,6 +94,8 @@ else
         }
     }
 }
+    ?>
+</div>
 
 include 'templates/footer.php';
 ?>

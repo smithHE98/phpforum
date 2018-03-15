@@ -7,11 +7,9 @@
  */
 
 ?>
-
-
-<h1>Forum</h1>
-
+<body>
 <div id="wrapper">
+    <h1>Forum</h1>
     <div id="menu">
         <a class="item" href="/index.php">Home</a> -
         <a class="item" href="/create_topic.php">Create a topic</a> -
@@ -19,7 +17,7 @@
 
         <div id="userbar">
             <?php
-
+            session_start();
             if($_SESSION['signed_in'])
             {
                 echo 'Hello' . $_SESSION['user_name'] . '. Not you? <a href="/signout.php">Sign out</a>';
@@ -29,13 +27,14 @@
                 echo '<a href="signin.php">Sign in</a> or <a href="/signup.php">Create an account</a>';
             }
 
-
             ?>
+
         </div>
+    </div>
 
-        <div id="content">
 
-        </div><!-- content -->
+
     </div><!-- wrapper -->
+</body>
 
 <link rel="stylesheet" href="/assets/style.css" type="text/css">
