@@ -18,33 +18,39 @@ include 'templates/header.php';
 
 <?php
 
-if($_SERVER['REQUEST_METHOD'] != 'POST')
+echo '<h3>Create New Category</h3><br>';
+
+if($_SESSION['signed_in'] == false)
 {
-    echo '<form method="post" action="">
-        Category name: <input type="text" name="cat_name" />
-        Category description: <textarea name="cat_description" /></textarea>
-        <input type="submit" value="Add category" />
-     </form>';
+
+    echo 'Sorry, you have to be <a href="/signin.php">signed in</a> to create a category.';
 }
-else
-{
-    $sql = "INSERT INTO
+else {
+
+    if ($_SERVER['REQUEST_METHOD'] != 'POST') {
+        echo '<form method="post" action="">
+        Category name: <input type="text" name="cat_name" /> <br>
+        <br>
+        Category description: <textarea name="cat_description" /></textarea> <br>
+        <br>
+        <input type="submit" value="Create category" />
+     </form>';
+    } else {
+        $sql = "INSERT INTO
             categories
         (cat_name, 
         cat_description)
        VALUES 
-       ('cat_name', 
-       'cat_description', 
-       'email')";
+       ('" . ($_POST['cat_name']) . "',
+        '" . ($_POST['cat_description']) . "')";
 
-    $result = mysqli_query($sql);
-    if(!$result)
-    {
-        echo "Error" . $mysqli_error();
-    }
-    else
-    {
-        echo "New category successfully added.";
+        $result = mysqli_query($conn, $sql);
+
+        if (!$result) {
+            echo "Error" . $mysqli_error();
+        } else {
+            echo "New category successfully added.";
+        }
     }
 }
 ?>
@@ -57,5 +63,3 @@ else
 include 'templates/footer.php';
 
 ?>
-
-

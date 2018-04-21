@@ -14,8 +14,9 @@ include 'templates/header.php';
 <div id="content">
 
     <?php
+    session_start();
 
-echo '<h3>Sign up</h3>';
+echo '<h3>Sign Up</h3>';
 
 if ($_SERVER['REQUEST_METHOD'] != 'POST') {
     echo '<form method="post" action="">
@@ -73,7 +74,7 @@ else
     else
     {
 
-        $mysqli = "INSERT INTO
+        $sql = "INSERT INTO
                     users(user_name, user_pass, user_email ,user_date, user_level)
                 VALUES('" . ($_POST['user_name']) . "',
                        '" . sha1($_POST['user_pass']) . "',
@@ -81,7 +82,8 @@ else
                         NOW(),
                         0)";
 
-        $result = ($mysqli);
+        $result = mysqli_query($conn, $sql);
+
         if(!$result)
         {
 
@@ -90,12 +92,15 @@ else
         }
         else
         {
-            echo 'Successfully registered. You can now <a href="signin.php">sign in</a> and start posting.';
+            echo 'Successfully registered. You can now <a href="/signin.php">sign in</a> and start posting.';
         }
     }
 }
     ?>
 </div>
+
+
+<?php
 
 include 'templates/footer.php';
 ?>

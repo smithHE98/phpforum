@@ -14,7 +14,7 @@ body {
     padding: 20px 30px;
     text-align: left;
     width: 1000px;
-    height: 400px;
+    height: auto;
 }
 
 #menu {
@@ -67,7 +67,7 @@ table a:hover {
 }
 
 th {
-    background-color: #B40E1F;
+    background-color: #54864e;
     color: #F0F0F0;
 }
 
@@ -87,7 +87,7 @@ h3 {margin: 0; padding: 0;}
 
 #footer {
     font-size: 65%;
-    padding: 3px 0 0 0;
+/*    padding: 3px 0 0 0; */
 }
 
 .item {
@@ -107,6 +107,14 @@ h3 {margin: 0; padding: 0;}
     width: 30%;
 }
 
+.leftpart2 {
+    width: 20%;
+}
+
+.rightpart2 {
+    width: 80%;
+}
+
 .small {
     font-size: 75%;
     color: #373737;
@@ -123,5 +131,5 @@ h3 {margin: 0; padding: 0;}
 
 textarea {
     width: 500px;
-    height: 100px;
+    height: 40px;
 }

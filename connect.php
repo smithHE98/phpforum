@@ -9,14 +9,17 @@
 //Connect to database, run query, handle errors
 
 $servername = "localhost";
-$database = "forum";
+$username = "admin";
+$password = "WorkNow001";
+$db_name = "forum";
 
 // Create connection
-$conn = mysqli_connect($servername, $database);
+$conn = mysqli_connect($servername, $username, $password, $db_name);
 
 // Check connection
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-?>
+
+

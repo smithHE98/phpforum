@@ -35,19 +35,6 @@ CREATE TABLE posts (
   PRIMARY KEY (post_id)
 ) ;
 
-INSERT INTO
-  categories
-  (
-    cat_id, cat_name, cat_description
-  )
-VALUES(
-
-  'first',
-  'Discussion',
-  'Talk here.'
-)
-;
-
 ALTER TABLE topics ADD FOREIGN KEY(topic_cat) REFERENCES categories(cat_id) ON DELETE RESTRICT ON UPDATE CASCADE;
 
 ALTER TABLE topics ADD FOREIGN KEY(topic_by) REFERENCES users(user_id) ON DELETE RESTRICT ON UPDATE CASCADE;
@@ -55,5 +42,4 @@ ALTER TABLE topics ADD FOREIGN KEY(topic_by) REFERENCES users(user_id) ON DELETE
 ALTER TABLE posts ADD FOREIGN KEY(post_topic) REFERENCES topics(topic_id) ON DELETE CASCADE ON UPDATE CASCADE;
 
 ALTER TABLE posts ADD FOREIGN KEY(post_by) REFERENCES users(user_id) ON DELETE RESTRICT ON UPDATE CASCADE;
-
 
